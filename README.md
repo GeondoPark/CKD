@@ -1,5 +1,5 @@
-# CKD
-This repository is the official PyTorch implementation of "Distilling Linguistic Context for Language Model Compression" by GeondoPark, Gyeongman Kim and Eunho Yang.  
+# CKD - Distilling Context Linguistic for Language model compression
+This repository is the official PyTorch implementation of ["Distilling Linguistic Context for Language Model Compression"](https://arxiv.org/pdf/2109.08359.pdf) by GeondoPark, Gyeongman Kim and Eunho Yang.  
 Currently, it only contains code for task-specific distillation. Experimental code for the task-agnostic and dynabert in the paper will be posted soon.
 
 ## Setup
@@ -29,7 +29,7 @@ Overall hyperparameters for training are set by default.  Hyperparameters for ea
 python main_glue.py --exp_name teachers_glue \    
                     --do_train \  
                     --model_type bert \  
-                    --model_path ./downloaded_models/bert-base-uncased \  
+                    --model_path ./download_models/bert-base-uncased \  
                     --do_lower_case \  
                     --task_name [TASK_NAME] \  
                     --data_dir ./datas/glue \  
@@ -71,4 +71,19 @@ python main_glue_distill.py --exp_name distill_student \
                     --eval_steps 500 \  
                     --seed [SEED]
  
+```
+## Citation
+```
+@inproceedings{park2021distilling,
+  title={Distilling Linguistic Context for Language Model Compression},
+  author={Park, Geondo and Kim, Gyeongman and Yang, Eunho},
+  booktitle={Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing},
+  pages={364--378},
+  year={2021}
+}
+```
+## Acknowledgement
+```
+This work was supported by the National Research Foundation of Korea (NRF) grants (2018R1A5A1059921, 2019R1C1C1009192) and Institute of Information & Communications Technology Planning & Evaluation (IITP) grants(No.2017-0-01779, A machine learning and statistical inference framework for explainable artificial intelligence, No.2019-0-01371, Development
+of brain-inspired AI with human-like intelligence, No.2019-0-00075, Artificial Intelligence Graduate School Program (KAIST)) funded by the Korea government (MSIT).
 ```
