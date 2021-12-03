@@ -125,5 +125,12 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
+
 # Pyre type checker
 .pyre/
+# Custom setting
+experiments/
+download_models/
+datas/
+teachers_glue/
+teachers_squad/
