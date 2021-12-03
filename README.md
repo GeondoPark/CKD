@@ -1,6 +1,6 @@
 # CKD - Distilling Context Linguistic for Language model compression
 This repository is the official PyTorch implementation of ["Distilling Linguistic Context for Language Model Compression"](https://arxiv.org/pdf/2109.08359.pdf) by GeondoPark, Gyeongman Kim and Eunho Yang.  
-Currently, it only contains code for task-specific distillation. Experimental code for the task-agnostic and dynabert in the paper will be posted soon.
+Currently, it only contains code for task-specific distillation.
 
 ## Setup
 Currently, install other dependencies with conda environments
