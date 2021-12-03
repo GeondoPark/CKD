@@ -10,10 +10,10 @@ conda activate ckd
 pip install -r requirement.txt
 ```
 ## Prepare the datasets
-### Glue dataset
+### GLUE dataset
 Before running, download the GLUE data using [this repository](https://github.com/nyu-mll/GLUE-baselines) and unpack it to directory $datas/glue.  
 In $datas/glue directory, check that a folder is created for each task - CoLA, SST-2, MRPC, STS-B, QQP, MNLI, QNLI, RTE, WNLI. (We rename the folder in CoLA to COLA)
-### SQuAD dataset 
+### SQuADv1.1 dataset 
 Before running, download the SQuADv1.1 data using [this website](https://worksheets.codalab.org/worksheets/0xd53d03a48ef64b329c16b9baf0f99b0c/) and put it to directory $datas/squad.  
 In $datas/squad directory, check the file named train-v1.1.json and dev-v1.1.json. 
 
@@ -24,6 +24,7 @@ For example, download the bert-base-uncased model to be used as a teacher and th
 ## Training the teacher model
 Overall hyperparameters for training are set by default.  Hyperparameters for each task including the number of epochs and learning rate for each tasks, please refer the [our paper](https://arxiv.org/abs/2109.08359) and original [BERT](https://arxiv.org/abs/1810.04805).
 ### GLUE Training
+
 ```
 python main_glue.py --exp_name teachers_glue \    
                     --do_train \  
@@ -36,15 +37,13 @@ python main_glue.py --exp_name teachers_glue \
                     --num_train_epochs [#EPOCHS] \  
                     --learning_rate [LR] \  
 ```
-### SQuADv1.1 Training
-```
-python main_squad.py 
-```
+
 ## Training the student model with task-specific distillation
 Perform task specific distillation with **CKD**. 
 ### GLUE distillation training
 We included specific hyperparameters of CKD for each task in the BERT 6/768 student model setting.  
 For other smaller BERTs or hyperparameter tuning, comment out 'args = change_args(args)' in main_glue_distill.py  
+
 ```
 python main_glue_distill.py --exp_name distill_student \  
                     --distil_loss kl+wrdist+wrangle_window+ltrdist+ltrangle \  
