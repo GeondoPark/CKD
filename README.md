@@ -19,7 +19,7 @@ In $datas/squad directory, check the file named train-v1.1.json and dev-v1.1.jso
 
 ## Prepare the pre-trained smaller BERT provided by [Turc etal,.2019](https://arxiv.org/abs/1908.08962)
 Before task-specific distillation, you download the pre-trained teacher and student model from [this repository](https://github.com/google-research/bert).  
-For example, download the bert-base-uncased model to be used as a teacher and the bert 6/768 model to be used as a student and unpack it to directory $downloaded_models.
+For example, download the bert-base-uncased model to be used as a teacher and the bert 6/768 model to be used as a student and unpack it to directory $download_models.
 
 ## Training the teacher model
 Overall hyperparameters for training are set by default.  Hyperparameters for each task including the number of epochs and learning rate for each tasks, please refer the [our paper](https://arxiv.org/abs/2109.08359) and original [BERT](https://arxiv.org/abs/1810.04805).
